@@ -5,7 +5,7 @@
 int main(int argc, char *argv[]){
 	pid_t pid_hijo;
 	printf("Ejemplo fork. Este proceso va a crear otro proceso\n\n");
-	printf("El pid del programa principar es: %d\n",(int)getpid());
+	printf("El pid del programa principal es: %d\n",(int)getpid());
 
 	switch(pid_hijo=fork()){
 		case -1: 

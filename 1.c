@@ -5,9 +5,11 @@
 
 int main(void){
 	long ID1, ID2;
+	//Llamada indirecta 
 	ID1=syscall(SYS_getpid);
 	printf("syscall(SYS_getpid)= %ld\n", ID1);
 
+	//llamada con la funcion propiamente reservada
 	ID2=getpid();
 	printf("getpid()= %ld\n", ID2);
 
