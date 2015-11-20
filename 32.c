@@ -13,7 +13,7 @@ int main(){
 	scanf("%s",programa);
 	pid = fork();
 	if(pid == 0){
-		execl(programa, programa, NULL);
+		execlp(programa, programa, NULL);
 	}else{
 		wait(status);
 		printf("____________________________________________\n");

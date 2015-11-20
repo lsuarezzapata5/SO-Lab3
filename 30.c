@@ -54,7 +54,7 @@ int main(int argc, char *argv[]) {
 			wait(h2);
 		} 
 	}
-	system("pstree");
+	//system("pstree");
 	
 	return 0;
 }
