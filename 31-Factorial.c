@@ -14,37 +14,38 @@ int main(int argc, char *argv[]) {
 
 
 	if(pid_h1 == 0) {
-		pid_h2 = fork();
-		if(pid_h2 == 0) {
-			pid_h3 = fork();
-			if(pid_h3 == 0) {
-						
-			}else {
-				f=0;
-				for (i=1; i<11;i++){
-					f=factorial(i);
-					printf("Hijo 3:  Fact(%d): %d\n",i,f );
-				}
-				
-			exit(0);
-			}
-
-		}else {
-			f=0;
-			for (i=1; i<11;i++){
-				f=factorial(i);
-				printf("Hijo 2:  Fact(%d): %d\n",i,f );
-			}
-			
-		exit(0);
-		}
-
-	}else {
 		f=0;
 		for (i=1; i<11;i++){
 			f=factorial(i);
 			printf("Hijo 1:  Fact(%d): %d\n",i,f );
 		}
+		
+
+	}else {
+		pid_h2 = fork();
+		if(pid_h2 == 0) {
+			f=0;
+			for (i=1; i<11;i++){
+				f=factorial(i);
+				printf("Hijo 2:  Fact(%d): %d\n",i,f );
+			}
+		}else {
+			pid_h3 = fork();
+			if(pid_h3 == 0) {
+					f=0;
+				for (i=1; i<11;i++){
+					f=factorial(i);
+					printf("Hijo 3:  Fact(%d): %d\n",i,f );
+				}
+				
+			exit(0);	
+			}
+
+			
+			exit(0);
+		
+		}
+	
 		
 	exit(0);
 	}
